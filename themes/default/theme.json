@@ -1,0 +1,15 @@
+{
+    "name": "Default Theme",
+    "description": "Default CMS theme",
+    "version": "1.0.0",
+    "supports": {
+        "posts": true,
+        "custom-header": true,
+        "custom-background": true
+    },
+    "templates": {
+        "home": "Home Page",
+        "blog": "Blog Page",
+        "single": "Single Post"
+    }
+}
