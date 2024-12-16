@@ -1,6 +1,6 @@
 <?php
 
-namespace Sai\WebtreeCms\Core\Admin\Middleware;
+namespace Webtree\WebtreeCms\Core\Admin\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

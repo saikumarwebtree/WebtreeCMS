@@ -1,6 +1,6 @@
 <?php
 
-namespace Sai\WebtreeCms\Core\Models;
+namespace Webtree\WebtreeCms\Core\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

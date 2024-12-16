@@ -1,10 +1,10 @@
 <?php
 
-namespace Sai\WebtreeCms\Core\Support;
+namespace Webtree\WebtreeCms\Core\Support;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
-use Sai\WebtreeCms\Core\Models\Route as RouteModel;
+use Webtree\WebtreeCms\Core\Models\Route as RouteModel;
 
 class RouteRegistry
 {
