@@ -4,6 +4,7 @@ namespace Webtree\WebtreeCms\Core\Support;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use Webtree\WebtreeCms\Core\Models\Route as RouteModel;
 
 class RouteRegistry
@@ -13,26 +14,31 @@ class RouteRegistry
 
     public function register()
     {
-        $routes = $this->getRoutes();
+        try {
+            // Check if routes table exists
+            if (!Schema::hasTable('routes')) {
+                return;
+            }
 
-        foreach ($routes as $route) {
-            Route::match(
-                explode('|', $route->methods),
-                $route->uri,
-                $route->controller_action
-            )->name($route->name);
+            $routes = Cache::store('file')->remember($this->cacheKey, $this->cacheDuration, function () {
+                return RouteModel::active()->get();
+            });
+
+            foreach ($routes as $route) {
+                Route::match(
+                    explode('|', $route->methods),
+                    $route->uri,
+                    $route->controller_action
+                )->name($route->name);
+            }
+        } catch (\Exception $e) {
+            // Log error but don't break the application
+            \Log::error('Failed to register CMS routes: ' . $e->getMessage());
         }
-    }
-
-    protected function getRoutes()
-    {
-        return Cache::remember($this->cacheKey, $this->cacheDuration, function () {
-            return RouteModel::active()->get();
-        });
     }
 
     public function clearCache()
     {
-        Cache::forget($this->cacheKey);
+        Cache::store('file')->forget($this->cacheKey);
     }
 }

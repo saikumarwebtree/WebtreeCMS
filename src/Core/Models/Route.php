@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Route extends Model
 {
     protected $fillable = [
-        'name', 'uri', 'methods',
-        'controller_action', 'is_active'
+        'name',
+        'uri',
+        'methods',
+        'controller_action',
+        'is_active'
     ];
 
     protected $casts = [
