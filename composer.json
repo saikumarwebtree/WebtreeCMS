@@ -1,5 +1,5 @@
 {
-    "name": "sai/webtree-cms",
+    "name": "webtree/webtree-cms",
     "description": "A flexible WordPress-like CMS for Laravel",
     "type": "library",
     "license": "MIT",
@@ -21,18 +21,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Sai\\WebtreeCms\\": "src/"
+            "Webtree\\WebtreeCms\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sai\\WebtreeCms\\Tests\\": "tests/"
+            "Webtree\\WebtreeCms\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Sai\\WebtreeCms\\WebtreeCmsServiceProvider"
+                "Webtree\\WebtreeCms\\WebtreeCmsServiceProvider"
             ]
         }
     },
