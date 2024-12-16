@@ -1,6 +1,6 @@
 <?php
 
-namespace Sai\WebtreeCms\Core\Admin\Controllers;
+namespace Webtree\WebtreeCms\Core\Admin\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;

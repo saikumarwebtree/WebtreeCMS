@@ -46,7 +46,7 @@ return [
     */
     'content_types' => [
         'post' => [
-            'model' => \Sai\WebtreeCms\Core\Models\Post::class,
+            'model' => \Webtree\WebtreeCms\Core\Models\Post::class,
             'table' => 'posts',
             'frontend_route' => 'blog.show',
             'status' => ['draft', 'published'],
@@ -58,7 +58,7 @@ return [
             ],
         ],
         'page' => [
-            'model' => \Sai\WebtreeCms\Core\Models\Page::class,
+            'model' => \Webtree\WebtreeCms\Core\Models\Page::class,
             'table' => 'pages',
             'frontend_route' => 'page.show',
             'status' => ['draft', 'published'],

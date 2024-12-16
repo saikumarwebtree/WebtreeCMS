@@ -1,6 +1,6 @@
 <?php
 
-namespace Sai\WebtreeCms\Core\Theme\Facades;
+namespace Webtree\WebtreeCms\Core\Theme\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

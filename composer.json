@@ -1,5 +1,5 @@
 {
-    "name": "sai/webtree-cms",
+    "name": "webtree/webtree-cms",
     "description": "A flexible WordPress-like CMS for Laravel",
     "type": "library",
     "license": "MIT",

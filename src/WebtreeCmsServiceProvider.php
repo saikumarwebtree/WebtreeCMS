@@ -1,14 +1,14 @@
 <?php
 
-namespace Sai\WebtreeCms;
+namespace Webtree\WebtreeCms;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade;
-use Sai\WebtreeCms\Core\Theme\ThemeManager;
-use Sai\WebtreeCms\Core\Support\RouteRegistry;
-use Sai\WebtreeCms\Core\Support\MenuBuilder;
+use Webtree\WebtreeCms\Core\Theme\ThemeManager;
+use Webtree\WebtreeCms\Core\Support\RouteRegistry;
+use Webtree\WebtreeCms\Core\Support\MenuBuilder;
 
 class WebtreeCmsServiceProvider extends ServiceProvider
 {
@@ -41,7 +41,7 @@ class WebtreeCmsServiceProvider extends ServiceProvider
 
         // Register Custom Facades
         $this->app->bind('cms', function ($app) {
-            return new \Sai\WebtreeCms\Core\Support\CmsFacade();
+            return new \Webtree\WebtreeCms\Core\Support\CmsFacade();
         });
     }
 
@@ -184,10 +184,10 @@ class WebtreeCmsServiceProvider extends ServiceProvider
         $router = $this->app['router'];
         
         // Admin middleware
-        $router->aliasMiddleware('cms.admin', \Sai\WebtreeCms\Core\Admin\Middleware\AdminMiddleware::class);
+        $router->aliasMiddleware('cms.admin', \Webtree\WebtreeCms\Core\Admin\Middleware\AdminMiddleware::class);
         
         // Theme middleware
-        $router->aliasMiddleware('cms.theme', \Sai\WebtreeCms\Core\Theme\Middleware\ThemeMiddleware::class);
+        $router->aliasMiddleware('cms.theme', \Webtree\WebtreeCms\Core\Theme\Middleware\ThemeMiddleware::class);
     }
 
     /**
@@ -199,9 +199,9 @@ class WebtreeCmsServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Sai\WebtreeCms\Console\Commands\InstallCommand::class,
-                \Sai\WebtreeCms\Console\Commands\MakeThemeCommand::class,
-                \Sai\WebtreeCms\Console\Commands\ClearCacheCommand::class,
+                \Webtree\WebtreeCms\Console\Commands\InstallCommand::class,
+                \Webtree\WebtreeCms\Console\Commands\MakeThemeCommand::class,
+                \Webtree\WebtreeCms\Console\Commands\ClearCacheCommand::class,
             ]);
         }
     }
@@ -214,10 +214,10 @@ class WebtreeCmsServiceProvider extends ServiceProvider
     protected function registerViewComposers()
     {
         // Admin layout composer
-        View::composer('cms::admin.*', \Sai\WebtreeCms\Core\Admin\ViewComposers\AdminComposer::class);
+        View::composer('cms::admin.*', \Webtree\WebtreeCms\Core\Admin\ViewComposers\AdminComposer::class);
 
         // Theme layout composer
-        View::composer('theme::*', \Sai\WebtreeCms\Core\Theme\ViewComposers\ThemeComposer::class);
+        View::composer('theme::*', \Webtree\WebtreeCms\Core\Theme\ViewComposers\ThemeComposer::class);
     }
 
     /**

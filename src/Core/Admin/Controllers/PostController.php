@@ -3,7 +3,7 @@
 namespace WebtreeCms\LaravelCms\Core\Admin\Controllers;
 
 use Illuminate\Http\Request;
-use Sai\WebtreeCms\Core\Models\Post;
+use Webtree\WebtreeCms\Core\Models\Post;
 
 class PostController extends BaseAdminController
 {
